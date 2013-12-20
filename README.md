@@ -1,5 +1,5 @@
 ---
-  tags: todo, hard, rubeque, semver
+  tags: todo, hard, rubeque
   languages: ruby
 ---
 
