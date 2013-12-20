@@ -1,3 +1,8 @@
+---
+  tags: todo, hard, rubeque, semver
+  languages: ruby
+---
+
 # Version Sort
 * from rubeque http://www.rubeque.com/problems/version-sort * 
 
