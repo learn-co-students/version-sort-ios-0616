@@ -1,7 +1,7 @@
 require_relative 'spec_helper'
 
 describe "#version sort" do
-  it "should" do
+  it "turns an array of unsorted files into an array of sorted files" do
     filenames = [
       "foo-1.10.2.ext",
       "foo-1.11.ext",
@@ -52,6 +52,6 @@ describe "#version sort" do
       "foo-25.ext",
       "foo-100.ext",
     ]
-    filenames.version_sort.should eq(version_sorted_filenames)
+    expect(filenames.version_sort).to eq(version_sorted_filenames)
   end
 end
