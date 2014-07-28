@@ -1,5 +1,5 @@
 ---
-  tags: todo, hard, rubeque
+  tags: todo, hard, rubeque, cs
   languages: ruby
 ---
 
@@ -89,5 +89,7 @@ version_sorted_filenames = [
   "foo-25.ext",
   "foo-100.ext",
 ]
-assert_equal filenames.version_sort, version_sorted_filenames
+
+# version_sort_spec.rb
+expect(filenames.version_sort).to eq(version_sorted_filenames)
 ```
