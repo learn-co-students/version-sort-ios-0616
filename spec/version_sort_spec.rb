@@ -1,5 +1,3 @@
-require_relative 'spec_helper'
-
 describe "#version sort" do
   it "turns an array of unsorted files into an array of sorted files" do
     filenames = [
