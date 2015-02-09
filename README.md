@@ -30,7 +30,7 @@ Take a look at [this doc](http://guides.rubygems.org/patterns/#semantic-versioni
 ## Example
 
 ``` ruby
-filenames = ["foo-7.0b.ext", "foo-7.0.ext", "foo-6.0.ext", "foo-7.0a.ext"] }
+filenames = ["foo-7.0b.ext", "foo-7.0.ext", "foo-6.0.ext", "foo-7.0a.ext"]
 filenames.version_sort
 # => [ "foo-6.0.ext", "foo-7.0.ext", "foo-7.0a.ext", "foo-7.0b.ext"]
 
