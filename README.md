@@ -1,96 +1,45 @@
 ---
 tags: todo, hard, rubeque, cs
 languages: ruby
-resources: 0
+resources: 1
 ---
 
 # Version Sort
-* from rubeque http://www.rubeque.com/problems/version-sort * 
 
 ## Objectives: 
 
-Implement the version_sort method
+Implement the version_sort method.
 
-### Inspiration: 
-
-http://www.gnu.org/software/coreutils/manual/html_node/More-details-about-version-sort.html
-
-## Skills: 
-reg exp, split, sort, each
-
-## Instructions:
+## Instructions
 
 The version sort takes into account the fact that file names frequently include indices or version numbers. Standard sorting functions usually do not produce the ordering that people expect because comparisons are made on a character-by-character basis. The version sort addresses this problem, and is especially useful when browsing directories that contain many files with indices/version numbers in their names:
 
-     $ ls -1            $ ls -1v
-     foo.zml-1.gz       foo.zml-1.gz
-     foo.zml-100.gz     foo.zml-2.gz
-     foo.zml-12.gz      foo.zml-6.gz
-     foo.zml-13.gz      foo.zml-12.gz
-     foo.zml-2.gz       foo.zml-13.gz
-     foo.zml-25.gz      foo.zml-25.gz
-     foo.zml-6.gz       foo.zml-100.gz
+```txt
+ $ ls -1            $ ls -1v
+ foo.zml-1.gz       foo.zml-1.gz
+ foo.zml-100.gz     foo.zml-2.gz
+ foo.zml-12.gz      foo.zml-6.gz
+ foo.zml-13.gz      foo.zml-12.gz
+ foo.zml-2.gz       foo.zml-13.gz
+ foo.zml-25.gz      foo.zml-25.gz
+ foo.zml-6.gz       foo.zml-100.gz
+```
 
+Take a look at [this doc](http://guides.rubygems.org/patterns/#semantic-versioning) on semantic versioning if you'd like to learn more.
 
-## Code:
+## Example
 
 ``` ruby
-class Array
-  def version_sort
-    ___
-  end
-end
-filenames = [
-  "foo-1.10.2.ext",
-  "foo-1.11.ext",
-  "foo-1.3.ext",
-  "foo-1.50.ext",
-  "foo-1.8.7.ext",
-  "foo-1.9.3.ext",
-  "foo-1.ext",
-  "foo-10.1.ext",
-  "foo-10.ext",
-  "foo-100.ext",
-  "foo-13.ext",
-  "foo-2.0.0.ext",
-  "foo-2.0.1.ext",
-  "foo-2.0.ext",
-  "foo-2.007.ext",
-  "foo-2.01.ext",
-  "foo-2.012b.ext",
-  "foo-2.01a.ext",
-  "foo-2.0a.ext",
-  "foo-2.0b.ext",
-  "foo-2.1.ext",
-  "foo-25.ext",
-  "foo-6.ext",
-]
-version_sorted_filenames = [
-  "foo-1.ext",
-  "foo-1.3.ext",
-  "foo-1.8.7.ext",
-  "foo-1.9.3.ext",
-  "foo-1.10.2.ext",
-  "foo-1.11.ext",
-  "foo-1.50.ext",
-  "foo-2.0.ext",
-  "foo-2.0a.ext",
-  "foo-2.0b.ext",
-  "foo-2.0.0.ext",
-  "foo-2.0.1.ext",
-  "foo-2.01.ext",
-  "foo-2.1.ext",
-  "foo-2.01a.ext",
-  "foo-2.007.ext",
-  "foo-2.012b.ext",
-  "foo-6.ext",
-  "foo-10.ext",
-  "foo-10.1.ext",
-  "foo-13.ext",
-  "foo-25.ext",
-  "foo-100.ext",
-]
+filenames = ["foo-7.0b.ext", "foo-7.0.ext", "foo-6.0.ext", "foo-7.0a.ext"]
+filenames.version_sort
+# => [ "foo-6.0.ext", "foo-7.0.ext", "foo-7.0a.ext", "foo-7.0b.ext"]
 
-# version_sort_spec.rb
-expect(filenames.version_sort).to eq(version_sorted_filenames)
 ```
+
+## Getting Started
+
+You'll be monkey patching the Array class to make this work. Run the testing suite to get started. The final test relies on the files `unsorted.json` and `sorted.json` in `spec/fixtures`. Take a look at them once you've gotten your first two tests to pass.
+
+## Resources
+
+* [Semantic Versioning](http://guides.rubygems.org/patterns/#semantic-versioning)
