@@ -1,14 +1,7 @@
 GEM
   remote: https://rubygems.org/
   specs:
-    blockenspiel (0.4.5)
-    coderay (1.1.0)
     diff-lcs (1.2.5)
-    method_source (0.8.2)
-    pry (0.10.0)
-      coderay (~> 1.1.0)
-      method_source (~> 0.8.1)
-      slop (~> 3.4)
     rspec (3.0.0)
       rspec-core (~> 3.0.0)
       rspec-expectations (~> 3.0.0)
@@ -21,14 +14,9 @@ GEM
     rspec-mocks (3.0.3)
       rspec-support (~> 3.0.0)
     rspec-support (3.0.3)
-    slop (3.6.0)
-    versionomy (0.4.4)
-      blockenspiel (>= 0.4.5)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
-  pry
   rspec
-  versionomy
