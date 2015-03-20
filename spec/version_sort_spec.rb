@@ -23,15 +23,16 @@ describe "#version sort" do
     let(:sorted_versions) { JSON.parse(File.read("spec/fixtures/sorted.json")) }
     let(:result) { unsorted_versions.version_sort }
 
+    it "overview: turns an array of unsorted files into an array of sorted files" do
+      expect(result).to eq(sorted_versions)
+    end
+    
     it "detail: turns an array of unsorted files into an array of sorted files" do
       sorted_versions.each_with_index do |version, i|
         expect(result[i]).to eq(version)
       end
     end
 
-    it "overview: turns an array of unsorted files into an array of sorted files" do
-      expect(result).to eq(sorted_versions)
-    end
   end
 
 end
