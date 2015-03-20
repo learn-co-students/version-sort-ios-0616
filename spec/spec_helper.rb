@@ -1,5 +1,5 @@
 require_relative '../config/environment'
-require_relative '../version_sort'
+require_relative '../lib/version_sort'
 require 'json'
 
 RSpec.configure do |config|
