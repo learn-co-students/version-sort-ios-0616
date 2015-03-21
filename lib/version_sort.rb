@@ -1,26 +1,13 @@
 class Array
 
+  REGEX = /^(.*?)([\d.]*[\d])(.*?)$/
+  
   def version_sort
-    self.sort_by do |item| 
-      version = item.gsub("foo-", "").gsub(".ext", "")
-      
-      # create letters
-      characters = /[^0-9.].*/.match(version)
-      letters = characters[0] if characters
-      
-      # placements
-      placement = 1
-      if letters
-        dot_or_num = version[version.index(letters) - 1]
-        dot_or_num == "." ? placement = 0 : placement = 2
-      end
-
-      # make number array
-      prelim_numbers = version.gsub(/[^0-9.].*/, "").split(".")
-      prelim_numbers.reject! { |c| c.empty? }
-      numbers = prelim_numbers.map {|n| n.to_i}
-      
-      [numbers, placement, letters]
+    self.sort_by do |version|
+      _, prefix, numbers, suffix = REGEX.match(version).to_a
+      numbers = numbers.split(".").map(&:to_i)
+      period = suffix.start_with?(".") ? 0 : 1
+      [prefix, numbers, period, suffix]
     end
   end 
 end
