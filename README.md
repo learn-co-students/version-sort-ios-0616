@@ -33,8 +33,17 @@ Take a look at [this doc](http://guides.rubygems.org/patterns/#semantic-versioni
 filenames = ["foo-7.0b.ext", "foo-7.0.ext", "foo-6.0.ext", "foo-7.0a.ext"]
 filenames.version_sort
 # => [ "foo-6.0.ext", "foo-7.0.ext", "foo-7.0a.ext", "foo-7.0b.ext"]
+```
+
+For the purposes of this lab, extensions that start with a "." come before the "naked" version. Extensions that don't start with a "." come after:
 
 ```
+filenames = ["foo-7.0.ext", "foo-7.0.beta1.ext", "foo-7.0a.ext", "foo-7.0.rc1.ext"]
+filenames.version_sort
+# => ["foo-7.0.beta1.ext", "foo-7.0.rc1.ext", "foo-7.0.ext", "foo-7.0a.ext"]
+```
+
+This is not typical version sort behaviour, typically everything comes before the final, "naked" version regardless of whether there's a period or not. This lab just expects this change to challenge you.
 
 ## Getting Started
 
