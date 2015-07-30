@@ -1,8 +1,4 @@
----
-tags: todo, hard, rubeque, cs
-languages: ruby
-resources: 1
----
+
 
 # Version Sort
 
