@@ -48,3 +48,5 @@ You'll be monkey patching the Array class to make this work. Run the testing sui
 ## Resources
 
 * [Semantic Versioning](http://guides.rubygems.org/patterns/#semantic-versioning)
+
+<a href='https://learn.co/lessons/version-sort' data-visibility='hidden'>View this lesson on Learn.co</a>
