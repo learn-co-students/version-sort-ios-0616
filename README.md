@@ -49,4 +49,4 @@ You'll be monkey patching the Array class to make this work. Run the testing sui
 
 * [Semantic Versioning](http://guides.rubygems.org/patterns/#semantic-versioning)
 
-<a href='https://learn.co/lessons/version-sort' data-visibility='hidden'>View this lesson on Learn.co</a>
+<p data-visibility='hidden'>View <a href='https://learn.co/lessons/version-sort' title='Version Sort'>Version Sort</a> on Learn.co and start learning to code for free.</p>
